@@ -62,7 +62,6 @@ setup(
     tests_require=get_requirements("tests/requirements.txt"),
     extras_require={"sqla": ["sqlalchemy>=1.3.11"], "signals": ["blinker"]},
     cmdclass={"test": PyTest},
-    entry_points={"pytest11": ["pytest_flask_dance = flask_dance.fixtures.pytest"]},
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",
