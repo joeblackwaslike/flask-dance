@@ -99,8 +99,7 @@ class BaseOAuthConsumerBlueprint(flask.Blueprint, metaclass=ABCMeta):
 
         """
         for local_var, config_var in self.from_config.items():
-            value = flask.current_app.config.get(config_var)
-            if value:
+            if value := flask.current_app.config.get(config_var):
                 if "." in local_var:
                     # this is a dotpath -- needs special handling
                     body, tail = local_var.rsplit(".", 1)

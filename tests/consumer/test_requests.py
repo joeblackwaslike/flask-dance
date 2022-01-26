@@ -71,7 +71,7 @@ def test_oauth2session_token():
 def test_oauth2session_unset_token():
     bp = mock.Mock(token=None)
     sess = OAuth2Session(client_id="cid", blueprint=bp)
-    assert sess.token == None
+    assert sess.token is None
 
 
 def test_oauth2session_access_token():
@@ -83,4 +83,4 @@ def test_oauth2session_access_token():
 def test_oauth2session_unset_access_token():
     bp = mock.Mock(token=None)
     sess = OAuth2Session(client_id="cid", blueprint=bp)
-    assert sess.access_token == None
+    assert sess.access_token is None
