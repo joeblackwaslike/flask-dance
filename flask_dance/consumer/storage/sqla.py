@@ -41,8 +41,7 @@ class OAuthConsumerMixin:
     token = Column(MutableDict.as_mutable(JSON), nullable=False)
 
     def __repr__(self):
-        parts = []
-        parts.append(self.__class__.__name__)
+        parts = [self.__class__.__name__]
         if self.id:
             parts.append(f"id={self.id}")
         if self.provider:

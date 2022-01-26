@@ -228,9 +228,7 @@ class OAuth2ConsumerBlueprint(BaseOAuthConsumerBlueprint):
             next_url = "/"
         log.debug("next_url = %s", next_url)
 
-        # check for error in request args
-        error = request.args.get("error")
-        if error:
+        if error := request.args.get("error"):
             error_desc = request.args.get("error_description")
             error_uri = request.args.get("error_uri")
             log.warning(

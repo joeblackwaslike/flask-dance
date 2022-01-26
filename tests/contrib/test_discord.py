@@ -53,7 +53,7 @@ def test_blueprint_factory_with_prompt():
     assert discord_bp.client_secret == "bar"
     assert discord_bp.authorization_url == "https://discord.com/api/oauth2/authorize"
     assert discord_bp.token_url == "https://discord.com/api/oauth2/token"
-    assert discord_bp.authorization_url_params["prompt"] == None
+    assert discord_bp.authorization_url_params["prompt"] is None
 
 
 def test_load_from_config(make_app):
